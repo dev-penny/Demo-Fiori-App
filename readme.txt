@@ -1,4 +1,4 @@
-#### SAP Fiori Application Template ####
+#### SAP Fiori Application ####
 
 A Fiori application.
 
