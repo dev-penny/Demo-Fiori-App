@@ -1,7 +1,8 @@
 # Demo-Fiori-App
-SAP Fiori Application Template
+SAP Fiori Application
 
-This is my first attempt to create a Fiori App using the Northwind OData services
+## Details
+SAP Fiori Application using the Northwind OData services
 
 ## Overview
 This Fiori app is based on the Orders Reference Scenario.
