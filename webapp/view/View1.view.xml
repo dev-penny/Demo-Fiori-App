@@ -85,7 +85,11 @@
 						items="{
                             path: 'globalModel>/NewItems'
                         }">
-
+						<headerToolbar>
+                        	<Toolbar>
+                        	    <Title text="Orders ({=${globalModel>/NewItems}.length})" level="H2"/>
+                        	</Toolbar>
+                    	</headerToolbar>
 					<columns>
 						<Column
 								minScreenWidth="Tablet"
