@@ -1,0 +1,124 @@
+<mvc:View
+    controllerName="project1.controller.Detail"
+  	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:vm="sap.ui.comp.variants">
+	<f:DynamicPage id="dynamicPageDetails" headerExpanded="{/headerExpanded}">
+			<!-- DynamicPage Title -->
+			<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<Title text="Order Details"/>	
+					</f:heading>
+				</f:DynamicPageTitle>
+			</f:title>
+			<!-- DynamicPage Header -->
+			<f:header>
+				<f:DynamicPageHeader pinnable="true">
+					<f:content>
+                        <VBox >
+                            <Text text="Orders {newHeaderModel>/OrderID}"  />
+                            <Text text="Products {newHeaderModel>/numberProducts}"  />
+                        </VBox>
+                        
+						<Button
+		                	text="Insert products"
+		                	width="230px"
+		                	press="onOpenDialogLogs"
+		                	class="sapUiSmallMarginBottom"
+		                	ariaHasPopup="Dialog" />
+		            </f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+
+			<!-- DynamicPage Content -->
+			<f:content> 
+				<Table 
+						id="idProductsTable"
+						inset="false"
+						items="{
+                            path: 'newModel>/NewProducts'
+                        }"
+                        
+				        >
+                        <headerToolbar>
+					        <OverflowToolbar id="otbSubheader">
+					        	<Title text="Products" level="H2" />
+					        	<ToolbarSpacer />
+					        	<Button id="editButton" text="Edit" type="Transparent"
+					        		    press="onEdit" visible="{visibleModel>/edit}" />
+                                <Button id="saveButton" text="Save" type="Transparent"
+							            press="onSave" visible="{visibleModel>/save}" />
+                                <Button id="DeleteProductsButton" text="Delete all Products" type="Transparent"
+							        press="onDeleteAll"  />
+					        </OverflowToolbar>
+				        </headerToolbar>
+                    
+					<columns>
+                        
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="ProductID"/>
+						</Column>
+						<Column 
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Unit Price"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Quantity"/>
+                            
+						</Column>
+                        <Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Total Price of Product"/>
+						</Column>
+                        <Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text=""/>
+						</Column>
+					</columns>
+
+					<items> 
+						<ColumnListItem
+								vAlign="Middle">
+							<cells>
+								<ObjectIdentifier
+                                
+										title="{newModel>ProductID}"
+										text="Product #{newModel>ProductID}"
+                                        titleActive="true" 
+                                        titlePress="onOpenDialogLogsView" />
+								<Text text="{= ((${newModel>UnitPrice} * 100) / 100).toFixed(2) } {i18n>Currency}"  />
+                                <VBox >
+                                    <Text text="{newModel>Quantity}"  visible="{visibleModel>/text}"/>
+                                    <StepInput value="{newModel>Quantity}" visible="{visibleModel>/stepinput}" />
+                                </VBox>
+                                <Text text="{= (((${newModel>UnitPrice} * 100) / 100).toFixed(2) )*(${newModel>Quantity}) } {i18n>Currency}"/>
+                                <Button id="delButton" text="Delete" type="Transparent" press="onDelete"  />
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</f:content>
+
+			<!-- DynamicPage Footer -->
+			<f:footer>
+				<OverflowToolbar>
+					<ToolbarSpacer/>
+					<Button type="Accept" text="Accept"/>
+					<Button type="Reject" text="Reject"/>
+				</OverflowToolbar>
+			</f:footer>
+		</f:DynamicPage>
+</mvc:View>

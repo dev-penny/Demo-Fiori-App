@@ -1,0 +1,26 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:u="sap.ui.unified">
+	<Dialog title="{i18n>dialogLogsTitle1}" busyIndicatorDelay="0" verticalScrolling="true" horizontalScrolling="false" contentWidth="45%">
+		<content>
+			<VBox>
+                <Panel id="idProductsDetailsPanel" class="sapUiResponsiveMargin" width="auto">
+		            <Label text="Product Name" />
+                    <Input value="{productModel>/ProductName}" />
+        
+                    <Label text="Unit Price" />
+                    <Input value="{= ((${productModel>/UnitPrice} * 100) / 100).toFixed(2) } {i18n>Currency}" />
+                
+                    <Label text="Quantity Per Unit" />
+                    <Input value="{productModel>/Quantity}" />
+                </Panel>
+			</VBox>
+		</content>
+        <beginButton>
+            <Button text="Save" press="onSaveDialogLogs" />
+        </beginButton>
+		<endButton>
+			<Button text="{i18n>dialogLogsClose}" press="onCloseDialogLogs" type="Reject" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

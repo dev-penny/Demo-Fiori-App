@@ -1,0 +1,7 @@
+specVersion: '2.6'
+metadata:
+  name: sap-fiori-app
+type: application
+framework:
+  name: OpenUI5
+  version: "1.99.0"

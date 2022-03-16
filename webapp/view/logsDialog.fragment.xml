@@ -1,0 +1,44 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns:u="sap.ui.unified">
+	<Dialog title="{i18n>dialogLogsTitle}" busyIndicatorDelay="0" verticalScrolling="true" horizontalScrolling="false" contentWidth="45%">
+		<content>
+			<VBox>
+				<Table 
+						id="idProducts"
+						inset="false"
+						items="{
+                            path: 'newModelList>/NewProductsList'
+                        }">
+
+					<columns>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Name"/>
+						</Column>
+						<Column 
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Add Product"/>
+						</Column>
+					</columns>
+
+					<items> 
+						<ColumnListItem
+								vAlign="Middle">
+							<cells>
+								<ObjectIdentifier
+										text="{newModelList>ProductName}" />
+									<Button icon="sap-icon://add" type="Transparent" press="onAddproducts" ariaLabelledBy="editButtonLabel"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</VBox>
+		</content>
+		<endButton>
+			<Button text="{i18n>dialogLogsClose}" press="onCloseDialogLogs" type="Reject" />
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

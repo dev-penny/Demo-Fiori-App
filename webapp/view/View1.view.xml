@@ -1,0 +1,183 @@
+<mvc:View
+    controllerName="project1.controller.View1"
+  	height="100%"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:core="sap.ui.core"
+	xmlns:layout="sap.ui.layout"
+	xmlns="sap.m"
+	xmlns:f="sap.f"
+	xmlns:fb="sap.ui.comp.filterbar"
+	xmlns:vm="sap.ui.comp.variants">
+		<f:DynamicPage id="dynamicPageId" headerExpanded="{/headerExpanded}">
+			<!-- DynamicPage Title -->
+			<f:title>
+				<f:DynamicPageTitle>
+					<f:heading>
+						<vm:VariantManagement standardItemText="My Products">
+						</vm:VariantManagement>
+					</f:heading>
+					<f:actions>
+						<ToolbarSpacer/>
+						<Button
+								text="Global Action"
+								type="Transparent"/>
+						<Button
+								text="Toggle Footer"
+								type="Transparent"
+								press="onToggleFooter"/>
+						<Button
+								icon="sap-icon://action"
+								type="Transparent"/>
+					</f:actions>
+				</f:DynamicPageTitle>
+			</f:title>
+			<!-- DynamicPage Header -->
+			<f:header>
+				<f:DynamicPageHeader pinnable="true">
+					<f:content>
+						<fb:FilterBar id="filterbar" reset="onReset" search="onSearch" useToolbar="false" showGoOnFB="false">
+							<fb:filterItems>
+								<fb:FilterItem name="A" label="Order">
+									<fb:control>
+										<MultiComboBox
+										id="slOrder"
+                                        selectionChange="onSearch"
+                                        items="{
+                                            path: 'globalModel>/NewItems'
+                                        }">
+	                                	<core:Item key="{globalModel>OrderID}" text="{globalModel>OrderID}"/>
+	                                	</MultiComboBox>
+									</fb:control>				
+								</fb:FilterItem>								
+								<fb:FilterItem name="B" label="ShipCity">
+									<fb:control>
+                                    <Input
+										id="slShipCity"
+                                        change="onSearch"
+                                        placeholder="Enter ShipCity"
+                                        >
+	                                	<core:Item key="{key}" text="{name}"/>
+	                                	</Input>
+									</fb:control>				
+								</fb:FilterItem>				
+								<fb:FilterItem name="C" label="ShipCountry">
+									<fb:control>
+                                    <Input
+										id="slShipCountry"
+                                        change="onSearch"
+                                        placeholder="Enter ShipCountry"
+                                        >
+	                                	<core:Item key="{key}" text="{name}"/>
+	                                	</Input>
+									</fb:control>				
+								</fb:FilterItem>
+							</fb:filterItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+
+			<!-- DynamicPage Content -->
+			<f:content>
+				<Table 
+						id="idOrdersTable"
+						inset="false"
+						items="{
+                            path: 'globalModel>/NewItems'
+                        }">
+
+					<columns>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Order"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Customer"/>
+						</Column>
+						<Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="Employee"/>
+						</Column>
+                        <Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="OrderDate"/>
+						</Column>
+                        <Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="RequiredDate"/>
+						</Column>
+                        <Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="ShippedDate"/>
+						</Column>
+                        <Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="ShipCity"/>
+						</Column>
+                        <Column
+								minScreenWidth="Tablet"
+								demandPopin="true">
+							<Text text="ShipCountry"/>
+						</Column>
+					</columns>
+
+					<items>
+						<ColumnListItem
+                                type="Navigation" 
+                                press="handleItemPress" 
+								vAlign="Middle">
+							<cells>
+								<ObjectIdentifier
+                                        
+										title="{globalModel>Order}"
+										text="{globalModel>OrderID}"
+                                        />
+								<Text text="{globalModel>CustomerID}"/>
+								<Text text="{globalModel>EmployeeID}"/>
+                                <Text text="{
+                                            path: 'globalModel>OrderDate',
+				                            type: 'sap.ui.model.type.DateTime',
+				                            formatOptions: {
+					                            style: 'short'
+				                                }
+                                            }"/>
+                                <Text text="{
+                                            path: 'globalModel>RequiredDate',
+				                            type: 'sap.ui.model.type.DateTime',
+				                            formatOptions: {
+					                            style: 'short'
+				                                }
+                                            }"/>
+                                <Text text="{	
+                                            path: 'globalModel>ShippedDate',
+				                            type: 'sap.ui.model.type.DateTime',
+				                            formatOptions: {
+					                            style: 'short'
+				                                }
+                                            }"/>
+                                <Text text="{globalModel>ShipCity}"/>
+                                <Text text="{globalModel>ShipCountry}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+			</f:content>
+
+			<!-- DynamicPage Footer -->
+			<f:footer>
+				<OverflowToolbar>
+					<ToolbarSpacer/>
+					<Button type="Accept" text="Accept"/>
+					<Button type="Reject" text="Reject"/>
+				</OverflowToolbar>
+			</f:footer>
+		</f:DynamicPage>
+</mvc:View>
