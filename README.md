@@ -1,4 +1,4 @@
-# Demo-Fiori-App
+# Fiori App
 SAP Fiori Application
 
 ## Details
