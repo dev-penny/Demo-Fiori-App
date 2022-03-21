@@ -6,7 +6,7 @@ SAP Fiori Application using the Northwind OData services
 
 ## Overview
 This Fiori app is based on the Orders Reference Scenario.
-The SAP Fiori Elements Application based on the ABAP RESTful Application Programming Model (RAP). The underlying OData service will be exposed using the OData V4 protocol, and the resulting app will look like this:
+The SAP Fiori Elements Application based on the ABAP RESTful Application Programming Model (RAP). The underlying OData service will be exposed using the OData V2 protocol, and the resulting app will look like this:
 
 ![a1](https://user-images.githubusercontent.com/88145246/158618160-a3aaf772-4780-47fd-b2a7-45b1a2788f77.png)
 
