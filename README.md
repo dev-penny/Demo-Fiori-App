@@ -19,5 +19,5 @@ SAP Cloud Platform ABAP Environment Trial Account using a ABAP Cloud Project, se
 
 Bussiness Application Studio (BAS), see how to create a Fiori App using BAS [Create an SAP Fiori App Using SAP Business Application Studio](https://developers.sap.com/tutorials/appstudio-fioriapps-create.html)
 
-## More Information
+### More Information
 For more information and documentation of all template features, see [SAPUI5 Demo Kit](https://sapui5.hana.ondemand.com/#/topic/a460a7348a6c431a8bd967ab9fb8d918)
