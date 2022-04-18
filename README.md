@@ -15,9 +15,9 @@ We can navigate into an Order and make some changes like add products, edit or d
 ![a2](https://user-images.githubusercontent.com/88145246/158618979-2728a22c-7fac-45be-8dfa-838a26db5764.png)
 
 ## Development Tools
-SAP Cloud Platform ABAP Environment Trial Account using a ABAP Cloud Project, see [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
+* SAP Cloud Platform ABAP Environment Trial Account using a ABAP Cloud Project, see [Create an SAP BTP ABAP Environment Trial User](https://developers.sap.com/tutorials/abap-environment-trial-onboarding.html)
 
-Bussiness Application Studio (BAS), see how to create a Fiori App using BAS [Create an SAP Fiori App Using SAP Business Application Studio](https://developers.sap.com/tutorials/appstudio-fioriapps-create.html)
+* Bussiness Application Studio (BAS), see how to create a Fiori App using BAS [Create an SAP Fiori App Using SAP Business Application Studio](https://developers.sap.com/tutorials/appstudio-fioriapps-create.html)
 
 ### More Information
 For more information and documentation of all template features, see [SAPUI5 Demo Kit](https://sapui5.hana.ondemand.com/#/topic/a460a7348a6c431a8bd967ab9fb8d918)
