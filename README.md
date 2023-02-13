@@ -10,7 +10,7 @@ The SAP Fiori Elements Application based on the ABAP RESTful Application Program
 
 ![a1](https://user-images.githubusercontent.com/88145246/158618160-a3aaf772-4780-47fd-b2a7-45b1a2788f77.png)
 
-We can navigate into an Order and make some changes like add products, edit or delete.
+We can navigate into an Order and make some changes like add products, edit or delete a product from the list.
 
 ![a2](https://user-images.githubusercontent.com/88145246/158618979-2728a22c-7fac-45be-8dfa-838a26db5764.png)
 
