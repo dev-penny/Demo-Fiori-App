@@ -2,7 +2,7 @@
 SAP Fiori Application
 
 ## Details
-SAP Fiori Application using the Northwind OData services
+A List Report using the Northwind OData services
 
 ## Overview
 This Fiori app is based on the Orders Reference Scenario.
